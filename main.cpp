@@ -2,11 +2,28 @@
 #include "board.h"
 #include <iostream>
 
+constexpr int W = 800;
+constexpr int H = 600;
+
 int main(){
-    Board tablica = Board(100,100);
-    std::cout << tablica.GetIndex(1,2) << std::endl;
+
+    Camera3D camera = {0};
+    InitWindow(W, H, "D'Alembert's equation");
+    ToggleFullscreen();
+    SetTargetFPS(60);
+
+    while(!WindowShouldClose()){
+
+        BeginDrawing();
+            ClearBackground(BLACK);
+            BeginMode3D(camera);
+            
 
 
+            EndMode3D();
+        EndDrawing();
+    }
 
+    CloseWindow();
 
 }
